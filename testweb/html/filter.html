@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/filter/" method="POST">
+        {% csrf_token %}
+        <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>成绩</td>
+                <td>性别</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> {{user.id}} </td>
+                <td> {{user.name}} </td>
+                <td> {{user.age}} </td>
+                <td> {{user.score}} </td>
+                <td> {{user.sex}} </td>
+            </tr>
+        </tbody>
+        </table>
+        <div class="rem_sub">
+            <div class="rem_sub_l">
+            </div>
+            <label>
+                <input type="submit" class="sub_button" name="button" id="button" value="返回"  >
+            </label>
+        </div>
+    </form>
+</body>
+</html>

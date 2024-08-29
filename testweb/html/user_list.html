@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>成绩</td>
+            <td>性别</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in user_list %}
+        <tr>
+            <td> {{user.id}} </td>
+            <td> {{user.name}} </td>
+            <td> {{user.age}} </td>
+            <td> {{user.score}} </td>
+            <td> {{user.sex}} </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <form action="/login/" method="POST">
+        {% csrf_token %}
+        <h2>添加</h2>
+		<div class="rem_sub">
+			<div class="rem_sub_l">
+				</div>
+				<label>
+					<input type="submit" class="sub_button" name="button0" id="button0" value="添加"  >
+				</label>
+		</div>
+    </form>
+    <form action="/user/" method="POST">
+        {% csrf_token %}
+        <h2>想要删除哪一列</h2>
+        <label>
+            <input type="text" id="col" name="which_col" class="txt_input txt_input2" autofocus="true"  placeholder="Which column"  >
+        </label>
+        <div style="height: 25px;text-align: left;">
+            {{msg}}
+        </div>
+		<div class="rem_sub">
+			<div class="rem_sub_l">
+				</div>
+				<label>
+					<input type="submit" class="sub_button" name="button1" id="button" value="删除"  >
+				</label>
+		</div>
+    </form>
+    <form action="/update/" method="POST">
+        {% csrf_token %}
+        <h2>想要修改哪一列</h2>
+        <label>
+            <input type="text" id="_update" name="which_col_to_update" class="txt_input txt_input2" autofocus="true"  placeholder="Which column"  >
+        </label>
+        <div style="height: 25px;text-align: left;">
+            {{msg}}
+        </div>
+		<div class="rem_sub">
+			<div class="rem_sub_l">
+				</div>
+				<label>
+					<input type="submit" class="sub_button" name="button1" id="button1" value="修改"  >
+				</label>
+		</div>
+    </form>
+    <form action="/filter/" method="POST">
+        {% csrf_token %}
+        <h2>想要查看哪一列</h2>
+        <label>
+            <input type="text" id="filter" name="which_col_to_filter" class="txt_input txt_input2" autofocus="true"  placeholder="Which column"  >
+        </label>
+        <div style="height: 25px;text-align: left;">
+            {{msg}}
+        </div>
+		<div class="rem_sub">
+			<div class="rem_sub_l">
+				</div>
+				<label>
+					<input type="submit" class="sub_button" name="button2" id="button2" value="查看"  >
+				</label>
+		</div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body class="login">
+	 	<div class="login_m">
+			<div class="login_boder">
+				<div class="login_padding">
+					<form action="/login/" method="POST">
+						{% csrf_token %}
+						<h2>姓名</h2>
+						<label>
+							<input type="text" id="username" name="username" class="txt_input txt_input2" autofocus="true"  placeholder="Your name"  >
+						</label>
+						<h2>年龄</h2>
+						<label>
+							<input type="text" id="userage" name="userage"  class="txt_input"  placeholder="Your age" >
+						</label>
+						<h2>成绩</h2>
+						<label>
+							<input type="text" id="userscore" name="userscore"  class="txt_input"  placeholder="Your score" >
+						</label>
+						<h2>性别</h2>
+						<label>
+							<input type="text" id="usersex" name="usersex"  class="txt_input"  placeholder="Your sex" >
+						</label>
+						<div style="height: 25px;text-align: left;">
+							{{msg}}
+						</div>	
+						<div class="rem_sub">
+							<div class="rem_sub_l">
+							</div>
+							<label>
+								<input type="submit" class="sub_button" name="button" id="button" value="添加"  >
+							</label>
+						</div>
+					</form>
+				</div>
+			</div><!--login_boder end-->
+
+		</div>
+	</body>
+</html>
